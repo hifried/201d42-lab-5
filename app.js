@@ -60,7 +60,7 @@ function sumAndMultiply(a, b, c) { //eslint-disable-line
   var sumOfFirstTwo = sum(a, b)[0]; // The [0] returns just the number portion from the array in Problem1.
   var sumOfAllThree = sum(sumOfFirstTwo, c)[0];
   var messageSum = a + ' and ' + b + ' and ' + c + ' sum to ' + sumOfAllThree + '.';
-  console.log ('Sum of all three', sumOfAllThree);
+  // console.log ('Sum of all three', sumOfAllThree);
 
   var multOfFirstTwo = multiply(a,b)[0]; // The [0] returns just the number portion from the array in Problem2.
   var multOfAllThree = multiply(multOfFirstTwo, c)[0];
@@ -87,15 +87,36 @@ IMPORTANT DETAIL: You may not use the arithmetic operator + in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumArray() function and see if the test passes.*/
 
 // Write your code here
-var testArray = [2, 3, 4]; //eslint-disable-line
+// var testArray = [2, 3, 4]; //eslint-disable-line
 
-function sumArray(sumArr) { //eslint-disable-line
+// function sumArray(a, b, c) { //eslint-disable-line
 
+// Hector Hints
+// Note to self: we can only use two arguments inside the paratheses for sum because we're referring to the sum function from problem 1.  Same thing for when we multiply.
+
+// Note: You can do it this way (below) or the second way (below below)...
+
+// var testArray = [2, 3, 4];
+// function sumArray(arrSum) {
+//   var desiredSum = sum(arrSum[0], sum(arrSum[1], arrSum[2])[0])[0];
+//   var elementMessage = arrSum + ' was passed in as an array of numbers, and ' + desiredSum + ' is their sum.';
+//   console.log (elementMessage);
+//   return [desiredSum, elementMessage];
+// }
+
+var testArray = [2, 3, 4];
+function sumArray(testArray) {
+  var sumOfFirstTwo = sum(testArray[0], testArray[1])[0];
+  var sumOfAllThree = sum(sumOfFirstTwo, testArray[2])[0];
+  var elementMessage = testArray + ' was passed in as an array of numbers, and ' + sumOfAllThree + ' is their sum.';
+  return [sumOfAllThree, elementMessage];
 }
+
+// Desired result: [sum of the numbers in the Array, string in given format]
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -110,6 +131,9 @@ IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
 
 // Write your code here
+// Hey! Treat this one just like Problem 4, except now you're doing multiply instead of sum!
+// Note to self: Can only use 2 arguments inside the paratheses since we're referring to the multiply function referenced in problem 2.  And we're using [0] so many times because we want to refer to only the first element, not the message in the second element.
+
 function multiplyArray(multArr) { //eslint-disable-line
 
 }
