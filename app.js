@@ -134,12 +134,17 @@ Test this function by hand in the console to get it working, and when you think 
 // Hey! Treat this one just like Problem 4, except now you're doing multiply instead of sum!
 // Note to self: Can only use 2 arguments inside the paratheses since we're referring to the multiply function referenced in problem 2.  And we're using [0] so many times because we want to refer to only the first element, not the message in the second element.
 
-function multiplyArray(multArr) { //eslint-disable-line
+var testArray = [2, 3, 4];
+function multiplyArray(testArray) { //eslint-disable-line
 
+  var productFirstTwo = multiply(testArray[0], testArray[1])[0]; 
+  var productAllThree = multiply(productFirstTwo, testArray[2])[0];
+  var elementMessage = 'The numbers ' + testArray + ' have a product of ' + productAllThree + '.';
+  return [productAllThree, elementMessage];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop.
 
